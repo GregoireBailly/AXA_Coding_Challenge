@@ -29,9 +29,10 @@ def creation_json_sortie(liste_personne):
     import json
     reponse = []
     for p in liste_personne:
-        j = {"name": p.name,
-             "morningOptionIndex": p.optionM,
-             "eveningOptionIndex": p.optionE}
-        reponse.append(j)
+        if p.optionM != -1 and p.optionE:
+            j = {"name": p.name,
+                 "morningOptionIndex": p.optionM,
+                 "eveningOptionIndex": p.optionE}
+            reponse.append(j)
     with open("out.json", 'w') as fichier:
         json.dump(reponse, fichier)
