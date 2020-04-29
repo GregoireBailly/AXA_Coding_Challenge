@@ -25,14 +25,14 @@ def lecture_fichier(nom_fichier):
         return quotas, personnes
 #print(lecture_fichier('Inputs/input_1.json'))
 
-def creation_json_sortie(liste_personne):
+def creation_json_sortie(liste_personne, n):
     import json
     reponse = []
     for p in liste_personne:
-        if p.optionM != -1 and p.optionE:
+        if p.optionM != -1 and p.optionE != -1:
             j = {"name": p.name,
                  "morningOptionIndex": p.optionM,
                  "eveningOptionIndex": p.optionE}
             reponse.append(j)
-    with open("out.json", 'w') as fichier:
+    with open("out"+str(n)+".json", 'w') as fichier:
         json.dump(reponse, fichier)

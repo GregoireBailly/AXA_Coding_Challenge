@@ -4,10 +4,12 @@ def score(solution, quotas):
     #check if the solution is valid
     if isValid(solution, quotas) == False:
         return float("inf")
-        
+
     Mtransports = dict()
     Etransports = dict()
     for person in solution:
+        if person.optionM == -1:
+            continue
         #add 1 to the transports used on the morning
         Moption = person.morning[person.optionM]
 
@@ -46,10 +48,9 @@ def isValid(solution, quotas):
     for person in solution:
         if person.optionM != -1:
             workersByQuota[person.domain] += 1
-    
-    for domainQuota, workers in quotas, workersByQuota:
-        if workers < domainQuota:
+
+    for i in range(len(workersByQuota)):
+        if workersByQuota[i] < quotas[i]:
             return False
 
     return True
-
