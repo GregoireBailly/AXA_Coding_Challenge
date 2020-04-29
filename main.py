@@ -1,6 +1,8 @@
 from parser import *
 
-n = 3
+n = 1
 url = "Inputs/input_" + str(n) + ".json"
 
-print(lecture_fichier(url))
+quota, liste_personne = lecture_fichier(url)
+
+creation_json_sortie(liste_personne)
