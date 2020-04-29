@@ -4,6 +4,8 @@ class Person:
         self.domain = domain
         self.morning  = morning
         self.evening = evening
+        self.optionM = -1
+        self.optionE = -1
 
     def __str__(self):
         toPrint = self.name
