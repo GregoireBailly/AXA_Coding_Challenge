@@ -1,16 +1,4 @@
-class Person:
-    def __init__(self, name, domain, morning, evening):
-        self.name = name
-        self.domain = domain
-        self.morning  = morning
-        self.evening = evening
-
-    def __str__(self):
-        toPrint = self.name
-        toPrint += str(self.domain)
-        toPrint += str(self.morning)
-        toPrint += str(self.evening)
-        return toPrint
+from Person import *
 
 #Prends le nom d'un fichier en entrée et renvoie l'objet
 def lecture_fichier(nom_fichier):
@@ -36,4 +24,4 @@ def lecture_fichier(nom_fichier):
             personnes.append(p)
         return quotas, personnes
 
-print(lecture_fichier('Inputs/input_1.json'))
+#print(lecture_fichier('Inputs/input_1.json'))
