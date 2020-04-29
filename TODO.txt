@@ -1,0 +1,5 @@
+check why when generating neighbour, person ok turns false (a person is selcted more than once)
+
+add tabu
+add multiple departures
+add better departure
