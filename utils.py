@@ -6,7 +6,7 @@ def score(population):
     for person in population:
         #add 1 to the transports used on the morning
         Moption = person.morning[person.optionM]
-        
+
         for transport in Moption:
             t = str(transport)
             if t in Mtransports:
@@ -16,8 +16,8 @@ def score(population):
 
         #add 1 to the transports used on the evening
         Eoption = person.evening[person.optionE]
-        
-        for transport in Moption:
+
+        for transport in Eoption:
             t = str(transport)
             if t in Etransports:
                 Etransports[t] += 1
@@ -26,10 +26,10 @@ def score(population):
 
     #compute score from transports dicts
     score = 0
-    for passengerNb in Mtransports.values:
-        score =+ passengerNb * (passengerNb - 1)
+    for passengerNb in Mtransports.values():
+        score += passengerNb * (passengerNb - 1)
 
-    for passengerNb in Etransports.values:
-        score =+ passengerNb * (passengerNb - 1)
+    for passengerNb in Etransports.values():
+        score += passengerNb * (passengerNb - 1)
 
     return score
