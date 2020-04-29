@@ -4,11 +4,16 @@ from utils import *
 import random
 from copy import deepcopy
 
-n = 2
-url = "Inputs/input_" + str(n) + ".json"
+for n in range(1, 6):
+    url = "Inputs/input_" + str(n) + ".json"
+    quota, liste_personne = lecture_fichier(url)
 
-quota, liste_personne = lecture_fichier(url)
+    print("Jeu de test", n)
+    print("Quotas:", quota)
+    print("Nombre de personnes:", len(liste_personne))
 
+
+exit()
 score_minimal = float("inf")
 liste_minimal = []
 
