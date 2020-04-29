@@ -47,7 +47,7 @@ def isValid(solution, quotas):
         if person.optionM != -1:
             workersByQuota[person.domain] += 1
     
-    for domainQuota, workers in quotas, workersByQuota:
+    for domainQuota, workers in zip(quotas, workersByQuota):
         if workers < domainQuota:
             return False
 
