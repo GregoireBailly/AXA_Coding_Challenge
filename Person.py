@@ -4,6 +4,8 @@ class Person:
         self.domain = domain
         self.morning  = morning
         self.evening = evening
+
+        # the index of the option (0 to n-1); -1 if the person is not going to work
         self.optionM = -1
         self.optionE = -1
 
