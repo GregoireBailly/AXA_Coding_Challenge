@@ -73,6 +73,7 @@ def countPersonWorking(personWorking):
 
 def genNeighbour(sol):
     n = deepcopy(sol)
+    print("Copy: ", solIsOkPerson(n))
     personWorking = []
     indexes = []
     for person in n:
@@ -95,6 +96,7 @@ def genNeighbour(sol):
     if personWorking[randP] == False: print("Error 1X in neighbour gen")
     personWorking[randP] = False
     
+    print("Middle: ", solIsOkPerson(n))
     #print("middle: ", countPersonWorking(personWorking))
 
     if getValidityScore(personWorking) == 0 :
@@ -120,6 +122,8 @@ def genNeighbour(sol):
 
     randO = random.randint(0, len(n[randP])-1)
     n[randP][randO] = True
+
+    print("After: ", solIsOkPerson(n))
 
     return n
 
